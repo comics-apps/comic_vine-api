@@ -1,4 +1,4 @@
-require "comic_vine/api/version"
+require 'comic_vine/api/version'
 
 module ComicVine
   module Api
