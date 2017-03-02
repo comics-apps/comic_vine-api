@@ -8,6 +8,11 @@ RSpec.describe ComicVine::Api do
     it 'has a version' do
       expect(ComicVine::Api.const_defined?('VERSION')).to be_truthy
     end
+
+    it 'has a filled default server' do
+      expect(ComicVine::Api.const_defined?('DEFAULT_SERVER')).to be_truthy
+      expect(ComicVine::Api::DEFAULT_SERVER).to eq('comicvine.gamespot.com')
+    end
   end
 
   it 'has an attr_reader for api key' do
