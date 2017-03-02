@@ -1,5 +1,5 @@
 module ComicVine
-  module Api
+  class Api
     module HTTPService
     end
   end
