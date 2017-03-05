@@ -33,4 +33,21 @@ RSpec.describe ComicVine::Api do
     service = ComicVine::Api.new(api_key, options)
     expect(service.options).to eq(proxy: 'localhost')
   end
+
+  it 'return response for types request' do
+    api_key = 'qwerty'
+    service = ComicVine::Api.new(api_key)
+    response = nil
+    VCR.use_cassette('types') do
+      response = service.types
+    end
+
+    expect(response).to be_a(ComicVine::Api::Response)
+    expect(response.status).to eq(200)
+    expect(response.error).to eq('OK')
+    expect(response.status_code).to eq(1)
+    expect(response.results).to be_an(Array)
+    expect(response.results).not_to be_empty
+    expect(response.version).to eq('1.0')
+  end
 end

@@ -4,7 +4,7 @@ require 'webmock'
 require 'comic_vine/api'
 
 VCR.configure do |c|
-  c.cassette_library_dir = File.join(File.dirname(__FILE__), '../vcr')
+  c.cassette_library_dir = File.join(File.dirname(__FILE__), 'vcr')
   c.hook_into :webmock
 end
 
