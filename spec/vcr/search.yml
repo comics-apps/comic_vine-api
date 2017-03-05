@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://comicvine.gamespot.com/api/search/?api_key=qwerty&format=json&query=flinstones
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.8.0
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Powered-By:
+      - PHP/5.6.6
+      Set-Cookie:
+      - device_view=full; expires=Wed, 05-Apr-2017 16:50:34 GMT; Max-Age=2674800;
+        path=/; httponly
+      - satcv=5558955a68434bbc69fa81c0ead8db5c; path=/; domain=.comicvine.gamespot.com;
+        HttpOnly
+      Cache-Control:
+      - no-cache
+      Date:
+      - Sun, 05 Mar 2017 17:49:26 GMT
+      X-Phoenix-Cache-Expires:
+      - 03-05-2017 09:54:26
+      X-Phoenix-Cached:
+      - 'true'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":"OK","limit":10,"offset":0,"number_of_page_results":2,"number_of_total_results":2,"status_code":1,"results":[{"aliases":"Grandpa
+        Flinstone","api_detail_url":"http:\/\/comicvine.gamespot.com\/api\/character\/4005-66609\/","birth":null,"count_of_issue_appearances":1,"date_added":"2009-10-06
+        09:02:14","date_last_updated":"2011-05-05 16:54:04","deck":"Fred Flintstone''s
+        father.","description":null,"first_appeared_in_issue":{"api_detail_url":"http:\/\/comicvine.gamespot.com\/api\/first_appeared_in_issue\/4000-171161\/","id":171161,"name":"Gli
+        Antenati","issue_number":"1613"},"gender":1,"id":66609,"image":{"icon_url":"http:\/\/comicvine.gamespot.com\/api\/image\/square_avatar\/981658-grandpa.jpg","medium_url":"http:\/\/comicvine.gamespot.com\/api\/image\/scale_medium\/981658-grandpa.jpg","screen_url":"http:\/\/comicvine.gamespot.com\/api\/image\/screen_medium\/981658-grandpa.jpg","small_url":"http:\/\/comicvine.gamespot.com\/api\/image\/scale_small\/981658-grandpa.jpg","super_url":"http:\/\/comicvine.gamespot.com\/api\/image\/scale_large\/981658-grandpa.jpg","thumb_url":"http:\/\/comicvine.gamespot.com\/api\/image\/scale_avatar\/981658-grandpa.jpg","tiny_url":"http:\/\/comicvine.gamespot.com\/api\/image\/square_mini\/981658-grandpa.jpg"},"name":"Ed
+        Flintstone","origin":{"api_detail_url":"http:\/\/comicvine.gamespot.com\/api\/origin\/4030-4\/","id":4,"name":"Human"},"publisher":{"api_detail_url":"http:\/\/comicvine.gamespot.com\/api\/publisher\/4010-10\/","id":10,"name":"DC
+        Comics"},"real_name":"Ed Flintstone","site_detail_url":"http:\/\/comicvine.gamespot.com\/ed-flintstone\/4005-66609\/","resource_type":"character"},{"aliases":null,"api_detail_url":"http:\/\/comicvine.gamespot.com\/api\/issue\/4000-203203\/","cover_date":"2008-08-10","date_added":"2010-04-02
+        03:17:13","date_last_updated":"2010-04-02 03:18:46","deck":null,"description":null,"has_staff_review":false,"id":203203,"image":{"icon_url":"http:\/\/comicvine.gamespot.com\/api\/image\/square_avatar\/1172768-img_7035.jpg","medium_url":"http:\/\/comicvine.gamespot.com\/api\/image\/scale_medium\/1172768-img_7035.jpg","screen_url":"http:\/\/comicvine.gamespot.com\/api\/image\/screen_medium\/1172768-img_7035.jpg","small_url":"http:\/\/comicvine.gamespot.com\/api\/image\/scale_small\/1172768-img_7035.jpg","super_url":"http:\/\/comicvine.gamespot.com\/api\/image\/scale_large\/1172768-img_7035.jpg","thumb_url":"http:\/\/comicvine.gamespot.com\/api\/image\/scale_avatar\/1172768-img_7035.jpg","tiny_url":"http:\/\/comicvine.gamespot.com\/api\/image\/square_mini\/1172768-img_7035.jpg"},"issue_number":"200832","name":"The
+        Flinstones: Avventure Preistoriche","site_detail_url":"http:\/\/comicvine.gamespot.com\/il-giornalino-200832-the-flinstones-avventure-prei\/4000-203203\/","store_date":null,"volume":{"api_detail_url":"http:\/\/comicvine.gamespot.com\/api\/volume\/4050-32181\/","id":32181,"name":"Il
+        Giornalino","site_detail_url":"http:\/\/comicvine.gamespot.com\/il-giornalino\/4050-32181\/"},"resource_type":"issue"}],"version":"1.0"}'
+    http_version: 
+  recorded_at: Sun, 05 Mar 2017 17:50:34 GMT
+recorded_with: VCR 3.0.3
