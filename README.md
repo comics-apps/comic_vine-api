@@ -1,5 +1,7 @@
 # ComicVine::Api
 
+[![Build Status](https://travis-ci.org/comics-apps/comic_vine-api.svg?branch=master)](https://travis-ci.org/comics-apps/comic_vine-api)
+
 A simple ComicVine API client for Ruby, inspired by the koala's gem style.
 
 This gem contains several advantages over other API clients:
