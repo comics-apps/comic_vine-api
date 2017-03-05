@@ -1,8 +1,12 @@
 # ComicVine::Api
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/comic_vine/api`. To experiment with that code, run `bin/console` for an interactive prompt.
+A simple ComicVine API client for Ruby, inspired by the koala's gem style.
 
-TODO: Delete this and the text above, and describe your gem
+This gem contains several advantages over other API clients:
+* unlike with `comic_vine` gem, you can fetch series list
+* you can write own http service class which can use different gem than `faraday`
+* response is returned as pure Hash instead of mapping to different object
+* default http service class allows you to override http options like proxy settings.
 
 ## Installation
 
@@ -22,7 +26,83 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+api_key = 'foo'
+options = {}
+service = ComicVine::Api.new(api_key, **options)
+```
+
+There are two static methods:
+
+* search
+
+```ruby
+service.search(...)
+```
+
+* types
+
+```ruby
+service.types
+```
+
+Rest of methods, for resources are creating dynamically. If API some method will change you can call `#redefine_api_methods` which recreate method from `types` API endpoint.
+ 
+Gem provide also universal method which allows you to create custome call to API:
+
+```ruby
+service.api_call(path, args, options)
+```
+
+* path - append to `http://comicvine.gamespot.com/api/`
+* args - query params
+* options - options for http service class
+
+Dynamic methods:
+
+* `character(id, args)`
+* `characters(args)`
+* `chat(id, args)`
+* `chats(args)`
+* `concept(id, args)`
+* `concepts(args)`
+* `episode(id, args)`
+* `episodes(args)`
+* `issue(id, args)`
+* `issues(args)`
+* `location(id, args)`
+* `locations(args)`
+* `movie(id, args)`
+* `movies(args)`
+* `object(id, args)`
+* `objects(args)`
+* `origin(id, args)`
+* `origins(args)`
+* `person(id, args)`
+* `people(args)`
+* `power(id, args)`
+* `powers(args)`
+* `promo(id, args)`
+* `promos(args)`
+* `publisher(id, args)`
+* `publishers(args)`
+* `series(id, args)`
+* `series_list(args)`
+* `story_arc(id, args)`
+* `story_arcs(args)`
+* `team(id, args)`
+* `teams(args)`
+* `video(id, args)`
+* `videos(args)`
+* `video_type(id, args)`
+* `video_types(args)`
+* `video_category(id, args)`
+* `video_categories(args)`
+* `volume(id, args)`
+* `volumes(args)`
+
+Check official API docs what arguments you can use: http://comicvine.gamespot.com/api/documentation
+
 
 ## Development
 
