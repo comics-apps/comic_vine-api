@@ -1,5 +1,6 @@
 # ComicVine::Api
 
+[![Gem Downloads](https://img.shields.io/gem/dt/comic_vine-api.svg)](https://rubygems.org/gems/comic_vine-api)
 [![Build Status](https://travis-ci.org/comics-apps/comic_vine-api.svg?branch=master)](https://travis-ci.org/comics-apps/comic_vine-api)
 [![Code Climate](https://codeclimate.com/github/comics-apps/comic_vine-api.svg)](https://codeclimate.com/github/comics-apps/comic_vine-api)
 
