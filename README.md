@@ -52,7 +52,7 @@ service.types
 
 Rest of methods, for resources are creating dynamically. If API some method will change you can call `#redefine_api_methods` which recreate method from `types` API endpoint.
  
-Gem provide also universal method which allows you to create custome call to API:
+Gem provides also universal method which allows you to create custom call to API:
 
 ```ruby
 service.api_call(path, args, options)
