@@ -36,8 +36,7 @@ RSpec.describe ComicVine::Api do
 
   it 'return response for types request' do
     VCR.use_cassette('types') do
-      api_key = 'qwerty'
-      service = ComicVine::Api.new(api_key)
+      service = ComicVine::Api.new(ENV['COMIC_VINE_API_KEY'])
       response = service.types
       expect(response).to be_a(ComicVine::Api::Response)
       expect(response.status).to eq(200)
@@ -51,8 +50,7 @@ RSpec.describe ComicVine::Api do
 
   it 'return response for search request' do
     VCR.use_cassette('search') do
-      api_key = 'qwerty'
-      service = ComicVine::Api.new(api_key)
+      service = ComicVine::Api.new(ENV['COMIC_VINE_API_KEY'])
       response = service.search(query: 'flinstones')
       expect(response).to be_a(ComicVine::Api::Response)
       expect(response.status).to eq(200)
@@ -87,16 +85,14 @@ RSpec.describe ComicVine::Api do
     end
 
     it 'dynamic methods by default' do
-      api_key = 'foo'
-      service = ComicVine::Api.new(api_key)
+      service = ComicVine::Api.new(ENV['COMIC_VINE_API_KEY'])
       dynamic_methods.each do |dynamic_method|
         expect(service).to respond_to(dynamic_method)
       end
     end
 
     it 'dynamic methods from api' do
-      api_key = 'qwerty'
-      service = ComicVine::Api.new(api_key)
+      service = ComicVine::Api.new(ENV['COMIC_VINE_API_KEY'])
 
       api_methods = []
       VCR.use_cassette('types') do
@@ -116,8 +112,7 @@ RSpec.describe ComicVine::Api do
 
     context 'dynamic collection method' do
       it 'and checks responses' do
-        api_key = 'qwerty'
-        service = ComicVine::Api.new(api_key)
+        service = ComicVine::Api.new(ENV['COMIC_VINE_API_KEY'])
 
         collection_methods.each do |method_name|
           VCR.use_cassette(method_name) do
@@ -162,8 +157,7 @@ RSpec.describe ComicVine::Api do
       end
 
       it 'and checks dynamic collection method responses' do
-        api_key = 'qwerty'
-        service = ComicVine::Api.new(api_key)
+        service = ComicVine::Api.new(ENV['COMIC_VINE_API_KEY'])
 
         entity_methods.each do |method_name|
           id = ids[:"#{method_name}_id"]

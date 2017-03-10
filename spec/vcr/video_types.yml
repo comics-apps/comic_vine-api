@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://comicvine.gamespot.com/api/video_types/?api_key=qwerty&field_list=api_detail_url&format=json&limit=1&sort=id
+    uri: http://comicvine.gamespot.com/api/video_types/?api_key=<API_KEY>&field_list=api_detail_url&format=json&limit=1&sort=id
     body:
       encoding: US-ASCII
       string: ''
