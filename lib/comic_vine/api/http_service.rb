@@ -9,10 +9,10 @@ module ComicVine
         private
 
         def faraday_options(options)
-          valid_options = [
-            :request, :proxy, :ssl, :builder, :url, :parallel_manager, :params,
-            :headers, :builder_class
-          ]
+          valid_options = %i(
+            request proxy ssl builder url parallel_manager params headers
+            builder_class
+          )
           Hash[options.select { |key, _| valid_options.include?(key) }]
         end
       end

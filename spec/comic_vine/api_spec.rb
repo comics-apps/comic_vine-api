@@ -63,21 +63,19 @@ RSpec.describe ComicVine::Api do
 
   context 'defines' do
     let(:collection_methods) do
-      [
-        :characters, :chats, :concepts, :episodes, :issues, :locations, :movies,
-        :objects, :origins, :people, :powers, :promos, :publishers,
-        :series_list, :story_arcs, :teams, :videos, :video_types,
-        :video_categories, :volumes
-      ]
+      %i(
+        characters chats concepts episodes issues locations movies objects
+        origins people powers promos publishers series_list story_arcs teams
+        videos video_types video_categories volumes
+      )
     end
 
     let(:entity_methods) do
-      [
-        :character, :chat, :concept, :episode, :issue, :location, :movie,
-        :object, :origin, :person, :power, :promo, :publisher,
-        :series, :story_arc, :team, :video, :video_type,
-        :video_category, :volume
-      ]
+      %i(
+        character chat concept episode issue location movie object
+        origin person power promo publisher series story_arc team
+        video video_type video_category volume
+      )
     end
 
     let(:dynamic_methods) do
@@ -133,22 +131,22 @@ RSpec.describe ComicVine::Api do
     context 'dynamic entity method' do
       let(:ids) do
         {
-          character_id: 1253,
+          character_id: 1_253,
           chat_id: nil,
-          concept_id: 35070,
+          concept_id: 35_070,
           episode_id: 1,
           issue_id: 6,
-          location_id: 21766,
+          location_id: 21_766,
           movie_id: 1,
-          object_id: 15073,
+          object_id: 15_073,
           origin_id: 1,
-          person_id: 1251,
+          person_id: 1_251,
           power_id: 1,
-          promo_id: 1743,
+          promo_id: 1_743,
           publisher_id: 4,
           series_id: 1,
-          story_arc_id: 27758,
-          team_id: 1800,
+          story_arc_id: 27_758,
+          team_id: 1_800,
           video_id: 1,
           video_type_id: 7,
           video_category_id: 7,
@@ -163,7 +161,8 @@ RSpec.describe ComicVine::Api do
           id = ids[:"#{method_name}_id"]
           next unless id
           VCR.use_cassette("#{method_name}_#{id}") do
-            response = service.send(method_name, id, field_list: 'api_detail_url')
+            response = service.send(method_name, id,
+                                    field_list: 'api_detail_url')
             expect(response).to be_a(ComicVine::Api::Response)
             expect(response.status).to eq(200)
             expect(response.error).to eq('OK')
