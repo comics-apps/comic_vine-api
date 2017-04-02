@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://comicvine.gamespot.com/api/types/?api_key=<API_KEY>&format=json
+    uri: https://comicvine.gamespot.com/api/types/?api_key=<API_KEY>&format=json
     body:
       encoding: US-ASCII
       string: ''

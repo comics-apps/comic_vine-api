@@ -11,7 +11,7 @@ RSpec.describe ComicVine::Api do
 
     it 'has a filled default server' do
       expect(ComicVine::Api.const_defined?('DEFAULT_SERVER')).to be_truthy
-      expect(ComicVine::Api::DEFAULT_SERVER).to eq('comicvine.gamespot.com')
+      expect(ComicVine::Api::DEFAULT_SERVER).to eq('https://comicvine.gamespot.com')
     end
   end
 

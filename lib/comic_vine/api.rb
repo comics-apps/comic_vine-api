@@ -16,7 +16,7 @@ module ComicVine
 
     self.http_service = HTTPService
 
-    DEFAULT_SERVER = 'comicvine.gamespot.com'.freeze
+    DEFAULT_SERVER = 'https://comicvine.gamespot.com'.freeze
 
     attr_reader :api_key, :options
 

@@ -30,7 +30,7 @@ module ComicVine
       end
 
       def server
-        "http://#{ComicVine::Api::DEFAULT_SERVER}"
+        ComicVine::Api::DEFAULT_SERVER
       end
     end
   end

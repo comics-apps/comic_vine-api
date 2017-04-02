@@ -38,7 +38,7 @@ RSpec.describe ComicVine::Api::Request do
 
   describe '#server' do
     it 'returns default server' do
-      expect(request.server).to eq('http://comicvine.gamespot.com')
+      expect(request.server).to eq('https://comicvine.gamespot.com')
     end
   end
 end
