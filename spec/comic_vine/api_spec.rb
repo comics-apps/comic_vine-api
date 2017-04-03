@@ -11,7 +11,8 @@ RSpec.describe ComicVine::Api do
 
     it 'has a filled default server' do
       expect(ComicVine::Api.const_defined?('DEFAULT_SERVER')).to be_truthy
-      expect(ComicVine::Api::DEFAULT_SERVER).to eq('https://comicvine.gamespot.com')
+      expect(ComicVine::Api::DEFAULT_SERVER)
+        .to eq('https://comicvine.gamespot.com')
     end
   end
 
@@ -63,19 +64,19 @@ RSpec.describe ComicVine::Api do
 
   context 'defines' do
     let(:collection_methods) do
-      %i(
+      %i[
         characters chats concepts episodes issues locations movies objects
         origins people powers promos publishers series_list story_arcs teams
         videos video_types video_categories volumes
-      )
+      ]
     end
 
     let(:entity_methods) do
-      %i(
+      %i[
         character chat concept episode issue location movie object
         origin person power promo publisher series story_arc team
         video video_type video_category volume
-      )
+      ]
     end
 
     let(:dynamic_methods) do
